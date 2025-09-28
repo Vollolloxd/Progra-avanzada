@@ -5,10 +5,10 @@ object Repositorio {
     val liquidaciones = mutableListOf<LiquidacionSueldo>()
 
     fun buscarEmpleado(rut: String): Empleado? =
-        empleados.find { it.rut.equals(rut.trim())}
+        empleados.find { it.rut.equals(rut.trim(), ignoreCase = true)}
 
     fun eliminarEmpleado(rut: String): Boolean =
-        empleados.removeIf { it.rut.equals(rut.trim())}
+        empleados.removeIf { it.rut.equals(rut.trim(), ignoreCase = true)}
 
     fun obtenerAfp(nombre: String): AFP? =
         afps.find {it.nombre.equals(nombre.trim(), ignoreCase = true)}
